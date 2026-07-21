@@ -1,0 +1,25 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: hiccup-tracker-backend
+    ports:
+      - "8010:8000"
+    volumes:
+      - hiccup_data:/app/data
+      - hiccup_uploads:/app/app/uploads
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: hiccup-tracker-frontend
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+    restart: unless-stopped
+
+volumes:
+  hiccup_data:
+  hiccup_uploads:

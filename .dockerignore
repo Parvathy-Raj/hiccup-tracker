@@ -1,0 +1,14 @@
+.git
+.agents
+.codex
+**/__pycache__
+**/*.pyc
+**/.venv
+**/node_modules
+**/dist
+**/.vite
+.pnpm-store
+backend/data
+backend/app/uploads
+backend/uvicorn.log
+backend/uvicorn.err.log
